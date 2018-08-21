@@ -2,7 +2,7 @@
 #
 
 cd /usr/share/man
-for i man* ; do
+for i in man* ; do
   printf "$i "
   ls $i | wc -l
 done
