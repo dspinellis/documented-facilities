@@ -1,2 +1,2 @@
 count:
-	./count.sh
+	sh count.sh
