@@ -3,6 +3,7 @@ addons:
     packages:
       manpages-dev
       manpages-posix-dev
+      linux-manual-3.13
 
 language: cpp
 
