@@ -1,5 +1,8 @@
-before_install:
-  - sudo apt-get install -y manpages-dev manpages-posix-dev
+addons:
+  apt:
+    packages:
+      manpages-dev
+      manpages-posix-dev
 
 language: cpp
 
