@@ -1,3 +1,6 @@
+before_install:
+  - sudo apt-get install -y manpages-dev manpages-posix-dev
+
 language: cpp
 
 script: make count
