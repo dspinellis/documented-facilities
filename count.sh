@@ -5,7 +5,7 @@ if [ `uname` = Linux ]
 then
   lsb_release -ds 2>/dev/null || cat /etc/*-release
 else
-  uname
+  uname -a
 fi
 
 cd /usr/share/man
