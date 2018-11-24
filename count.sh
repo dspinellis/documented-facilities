@@ -8,18 +8,24 @@ else
   uname -a
 fi
 
+if [ `uname` = Linux ]
+then
+  sudo apt-get source linux-image-$(uname -r) >/dev/null
+  cd $HOME/linux-*
+
+  # Count supported device drivers
+  printf "4p "
+  egrep -r $'^\t+.probe' drivers | wc -l
+
+  # Create man pages
+  scripts/kernel-doc -man $(find -name '*.c') 2>/dev/null | sudo $HOME/split-man.pl /usr/share/man/man9 2>/dev/null
+fi
+
 cd /usr/share/man
 for i in man* ; do
   printf "$i "
   ls $i | wc -l
 done
-if [ `uname` = Linux ]
-then
-  sudo apt-get source linux-image-$(uname -r)
-  cd linux-*
-  printf "4p "
-  egrep -r $'^\t+.probe' drivers | wc -l
-fi
 
 echo Samples
 for i in man* ; do
