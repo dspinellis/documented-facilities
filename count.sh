@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 
 if [ `uname` = Linux ]
@@ -13,6 +13,13 @@ for i in man* ; do
   printf "$i "
   ls $i | wc -l
 done
+if [ `uname` = Linux ]
+then
+  sudo apt-get source linux-image-$(uname -r)
+  cd linux-*
+  printf "4p "
+  egrep -r $'^\t+.probe' drivers | wc -l
+fi
 
 echo Samples
 for i in man* ; do
