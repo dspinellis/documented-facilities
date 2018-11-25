@@ -18,11 +18,13 @@ then
   ls
 
   # Count supported device drivers
-  printf "4p "
+  printf "man4p "
   egrep -r $'^\t+.probe' linux-src/drivers | wc -l
 
   # Create man pages
   linux-src/scripts/kernel-doc -man $(find linux-src -name '*.c') 2>/dev/null | sudo split-man.pl /usr/share/man/man9 2>/dev/null
+  echo Contents of /usr/share/man
+  ls -l /usr/share/man
 fi
 
 cd /usr/share/man
