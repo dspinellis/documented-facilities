@@ -10,6 +10,9 @@ fi
 
 if [ `uname` = Linux ]
 then
+  echo Contets of /usr/src
+  ls /usr/src
+  echo Install Linux source
   sudo apt-get source linux-image-$(uname -r) >/dev/null
   cd $HOME/linux-*
 
