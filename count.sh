@@ -22,9 +22,7 @@ then
   egrep -r $'^\t+.probe' linux-src/drivers | wc -l
 
   # Create man pages
-  linux-src/scripts/kernel-doc -man $(find linux-src -name '*.c') 2>/dev/null | sudo split-man.pl /usr/share/man/man9 2>/dev/null
-  echo Contents of /usr/share/man
-  ls -l /usr/share/man
+  linux-src/scripts/kernel-doc -man $(find linux-src -name '*.c') 2>/dev/null | sudo ./split-man.pl /usr/share/man/man9 2>/dev/null
 fi
 
 cd /usr/share/man
