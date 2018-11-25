@@ -10,12 +10,14 @@ fi
 
 if [ `uname` = Linux ]
 then
-  echo Contets of /usr/src
-  ls /usr/src
+  # Obtain DISTRIB_CODENAME
+  . /etc/lsb-release
+  # Obtain kernel sources
+  git clone --depth=1 git://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/$DISTRIB_CODENAME linux-src
   echo Contents of HOME
   ls $HOME
 
-  cd $HOME/linux-*
+  cd $HOME/linux-src
 
   # Count supported device drivers
   printf "4p "
