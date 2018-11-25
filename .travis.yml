@@ -1,10 +1,12 @@
+before_install:
+  - sudo chown _apt /var/lib/update-notifier/package-data-downloads/partial/
+  - sudo apt-get source linux-image-$(uname -r)
+
 addons:
   apt:
     packages:
       manpages-dev
       manpages-posix-dev
-    sources:
-      linux-image-$(uname -r)
 
 language: cpp
 
