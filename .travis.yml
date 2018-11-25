@@ -8,7 +8,7 @@ addons:
 
 language: cpp
 
-script: count.sh
+script: ./count.sh
 
 os:
   - linux
