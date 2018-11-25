@@ -12,8 +12,9 @@ if [ `uname` = Linux ]
 then
   echo Contets of /usr/src
   ls /usr/src
-  echo Install Linux source
-  sudo apt-get source linux-image-$(uname -r) >/dev/null
+  echo Contents of HOME
+  ls $HOME
+
   cd $HOME/linux-*
 
   # Count supported device drivers

@@ -3,10 +3,12 @@ addons:
     packages:
       manpages-dev
       manpages-posix-dev
+    sources:
+      linux-image-$(uname -r)
 
 language: cpp
 
-script: make count
+script: make count.sh
 
 os:
   - linux
